@@ -1,23 +1,26 @@
 import java.io.*;
 
 /**
- * MarkResetDo
+ * MarkResetDo???
  */
 public class MarkResetDo {
 
     public static void main(String[] args) throws Exception {
 
+        // Inputstream 과 buffer 의 차이점 ?
+
         InputStream is = null;
         BufferedInputStream bis = null;
 
         try {
-            File file = new File(".\\data\\number.txt");
+            File file = new File("..\\data\\number.txt");
             is = new FileInputStream(file);
             bis = new BufferedInputStream(is);
 
+            // buffer 위치 mark
             if (bis.markSupported()) {
                 int b, count = 0;
-                int half = (int) file.length() / 2;
+                int half = (int) file.length() / 2; // half 절반 위치 mark
                 System.out.println(file.length() + "" + half);
                 System.out.println("read complete file:");
                 System.out.println("--------------------------");
